@@ -28,21 +28,16 @@ def fftshift(arr):
     return left + right
 
 
-# number of sampling points
-N = 5012
+def f(x):
+    return cos(2 * pi * 50 * x)
 
-# interval of sampling (starting from 0)
+
+N = 5012
 T = 5
 t_line = linspace(0, T, N)
-
-# sampling time
 Ts = T / (N - 1)
-# sampling frequency
 Fs = 1 / Ts
-print(f"Fs = {Fs}")
-# cosine frequency
-F = 20
-y = [cos(2 * pi * F * t) for t in t_line]
+y = [f(t) for t in t_line]
 
 
 f_line = linspace(-Fs / 2, Fs / 2, len(t_line))
