@@ -40,7 +40,7 @@ Fs = 1 / Ts
 y = [f(t) for t in t_line]
 
 
-f_line = linspace(-Fs / 2, Fs / 2, len(t_line))
+f_line = linspace(-Fs / 2, Fs / 2, N)
 fourier = DFT(y)
 fourier_magnitude = [abs(f) for f in fourier]
 fourier_shifted = fftshift(fourier_magnitude)
